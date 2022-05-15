@@ -5,18 +5,18 @@ namespace App\Services;
 use LaravelEasyRepository\Service;
 use App\Repositories\Interfaces\CategoryRepositoryInterface;
 
-class CategoryService extends Service {
+class CategoryService extends Service
+{
 
-     /**
-     * don't change $this->mainInterface variable name
-     * because used in extends service class
-     */
-     protected $mainInterface;
+  protected $categoryRepository;
 
-    public function __construct(CategoryRepositoryInterface $mainInterface)
-    {
-      $this->mainInterface = $mainInterface;
-    }
+  public function __construct(CategoryRepositoryInterface $categoryRepository)
+  {
+    $this->categoryRepository = $categoryRepository;
+  }
 
-    // Define your custom methods :)
+  public function list()
+  {
+    return $this->categoryRepository->all();
+  }
 }

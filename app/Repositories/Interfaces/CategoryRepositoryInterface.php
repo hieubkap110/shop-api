@@ -6,5 +6,4 @@ use LaravelEasyRepository\Repository;
 
 interface CategoryRepositoryInterface extends Repository{
 
-    // Write something awesome :)
 }
